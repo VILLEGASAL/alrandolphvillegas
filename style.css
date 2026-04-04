@@ -1,0 +1,378 @@
+/* --- CSS VARIABLES (Color Palette) --- */
+:root {
+    --bg-dark: #091413;        /* Main background */
+    --card-bg: #285A48;        /* LinkedIn card backgrounds */
+    --accent: #408A71;         /* Buttons and banners */
+    --text-light: #B0E4CC;     /* Muted text / subtitles */
+    --white: #ffffff;          /* Primary text */
+    --border-radius: 12px;     /* LinkedIn style rounding */
+    --border-color: rgba(176, 228, 204, 0.2);
+}
+
+/* --- BASE STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--white);
+    line-height: 1.5;
+    padding: 20px 10px;
+}
+
+.mt-2 { margin-top: 1.5rem; }
+
+/* --- PROFILE CONTAINER --- */
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* --- CARD STYLES --- */
+.profile-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 24px 24px 0 24px;
+}
+
+.card-header h2 {
+    font-size: 1.25rem;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.card-content {
+    padding: 16px 24px 24px 24px;
+    color: var(--text-light);
+}
+
+/* --- NEW STATIC BANNER STYLES --- */
+.cover-banner {
+    height: 180px; 
+    background-color: var(--accent); /* Fallback color */
+    position: relative;
+    overflow: hidden;
+    /* Apply your image and ensure it fills and stays right-aligned for mobile */
+    background-image: url('batman.jpg');
+    background-size: cover;
+    background-position: center right;
+}
+
+/* --- PROFILE INFO --- */
+.profile-info {
+    padding: 0 24px 24px 24px;
+    position: relative;
+}
+
+.profile-avatar {
+    width: 152px;
+    height: 152px;
+    border-radius: 50%;
+    border: 4px solid var(--card-bg);
+    margin-top: -76px;
+    background-color: var(--bg-dark);
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 10;
+}
+
+.header-text { margin-top: 16px; }
+
+.header-text h1 {
+    font-size: 1.75rem;
+    color: var(--white);
+}
+
+.header-text h2 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-top: 4px;
+}
+
+.location {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 4px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+/* --- BUTTONS --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--text-light);
+    color: var(--bg-dark);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-light); /* Changed to the lightest color for visibility */
+    border: 2px solid var(--text-light); /* Thicker, brighter border */
+}
+
+.btn-secondary:hover {
+    background-color: var(--text-light); /* Fills with light color on hover */
+    color: var(--bg-dark); /* Text becomes dark for sharp contrast */
+    transform: translateY(-2px); /* Adds a subtle 'lift' effect when hovering */
+}
+
+/* --- SKILLS BADGES --- */
+.skill-group h3 {
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.skill-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badge {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--border-color);
+}
+
+/* --- LIST ITEMS (Projects & Certs) --- */
+.list-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.list-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.item-icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg-dark);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.item-details h3 {
+    font-size: 1.1rem;
+    color: var(--white);
+}
+
+.item-details p {
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+/* Project Links */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--text-light); /* Changed to light mint for high contrast */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.project-link i {
+    font-size: 0.75rem; 
+}
+
+.project-link:hover {
+    color: var(--white); /* Pops to solid white on hover */
+}
+
+/* --- CONTACT FORM & SOCIALS --- */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s;
+}
+
+.social-btn:hover {
+    color: var(--white);
+    border-color: var(--accent);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: rgba(9, 20, 19, 0.4);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.contact-form h3 {
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-dark);
+    color: var(--white);
+    outline: none;
+    font-size: 1rem;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: var(--accent);
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 600px) {
+    .profile-avatar {
+        width: 120px;
+        height: 120px;
+        margin-top: -60px;
+    }
+    
+    .header-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .header-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-btn {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+/* --- WARNING NOTE --- */
+.warning-note {
+    display: flex;
+    align-items: center; /* Aligns the icon and text */
+    gap: 12px;
+    background-color: rgba(176, 228, 204, 0.1); /* Very transparent mint green */
+    border-left: 4px solid var(--text-light); /* Thick accent line to draw the eye */
+    padding: 12px 16px;
+    border-radius: 4px 8px 8px 4px;
+    margin-bottom: 24px; /* Space between the note and the first project */
+}
+
+.warning-note i {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    flex-shrink: 0; /* Prevents the icon from squishing on tiny mobile screens */
+}
+
+.warning-note p {
+    color: var(--white);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.warning-note strong {
+    color: var(--text-light);
+}
+
+/* --- PROJECT TECH STACK --- */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap; /* Guarantees badges will wrap to a new line on small screens */
+    gap: 8px;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+.tech-badge {
+    background-color: rgba(9, 20, 19, 0.5); /* Slightly transparent dark background */
+    color: var(--white);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--border-color);
+}
