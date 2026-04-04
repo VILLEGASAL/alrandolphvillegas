@@ -37,6 +37,49 @@
             </div>
         </section>
 
+        <section class="profile-card gallery-section">
+            <div class="card-header">
+                <h2>Gallery</h2>
+            </div>
+            <div class="card-content">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="dict_diag.jpg" alt="Gallery Image 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="dict_speak.jpg" alt="Gallery Image 2">
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img src="Boot 2025.png" alt="Gallery Image 3">
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img src="dict_train.jpg" alt="Gallery Image 3">
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img src="organ.jpg" alt="Gallery Image 4">
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img src="group.jpg" alt="Gallery Image 5">
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="carousel-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                    
+                    <div class="carousel-indicators">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="profile-card about-section">
             <div class="card-header">
                 <h2>About</h2>
@@ -235,7 +278,7 @@
                     </a>
                 </div>
                 
-                <form action="mailto:youremail@example.com" method="POST" enctype="text/plain" class="contact-form">
+                <form action="mailto:villegasalrandolph@gmail.com" method="POST" enctype="text/plain" class="contact-form">
                     <h3>Send a Message</h3>
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="Email" placeholder="Your Email" required>
@@ -247,6 +290,26 @@
         </section>
 
     </main>
+
+    <div id="chat-widget" class="chat-widget">
+            <div class="chat-header">
+                <h3>Ask about Al <i class="fa-solid fa-robot"></i></h3>
+                <button id="close-chat"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="message bot-message">Hi! I'm AL. Ask anything about me!</div>
+            </div>
+            <form id="chat-form" class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Type your question..." autocomplete="off" required>
+                <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+
+        <button id="open-chat" class="chat-toggle-btn">
+            <i class="fa-solid fa-message"></i>
+            <span class="chat-text">Chat with me</span>
+        </button>
+        </main>
 
     <script src="main.js"></script>
 </body>
